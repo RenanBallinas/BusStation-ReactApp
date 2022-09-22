@@ -1,0 +1,26 @@
+body {
+    background-color: rgb(14, 12, 12);
+}
+
+form {
+    border-radius: 40px;
+    margin-top: 5%;
+    margin-right: center;
+    box-sizing: border-box;
+    padding: 120px;
+    position: relative;
+    background-color: beige;
+}
+
+H1 {
+    
+    font-size: 30px;
+    text-align: center;
+}
+input, h2 {
+    text-align: center;
+}
+
+button{
+    margin-left: 20px;
+}
