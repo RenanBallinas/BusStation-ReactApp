@@ -7,7 +7,8 @@ import NotFound from '../inicio/NotFound';
 import Fcliente from '../paginas/Fcliente';
 import Horariocom from "../paginas/Horariocom";
 import Terminalbal from "../paginas/Terminalbal";
-import Cancelaciones from "../paginas/Cancelaciones";
+import Asientos from "../paginas/asientos";
+import Reporte from "../paginas/Reporte";
 
 function Rutas(){
     return (
@@ -19,8 +20,9 @@ function Rutas(){
                         <Route exact path='/home' element={<Home/>}/>
                         <Route path="*" element={<NotFound/>}/>
                         <Route exact path="/" element={<Terminalbal/>}/>
+                        <Route exact path="/reporte" element={<Reporte />}/>
                         <Route exact path='/horariocom/:terminalesb' element={<Horariocom/>}/>
-                        <Route exact path='/cancelacion/:id' element={<Cancelaciones/>}/>
+                        <Route exact path="/asientos" element={<Asientos />}/>
                         <Route exact path='/fcliente' element={<Fcliente/>}/>
                         <Route exact path='/fcliente/:id' element={<Fcliente/>}/>
                     </Routes>

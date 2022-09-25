@@ -1,12 +1,13 @@
 import React, { useState,useEffect } from "react";
-import Axios from './Services/Axios';
 import {Link} from 'react-router-dom';
 import {useParams,useNavigate} from 'react-router-dom';
+import Axios from "../services/Axios";
 
 
 function Asientos(){
 
     const variables={
+        terminal: "",
         nombre: "",
         destino: "",
         fecha: "",
@@ -23,7 +24,7 @@ const cambioEstado = (e) => {
     setAsientos({ ...asientos, [name]: value });
   };
   const guardarAsientos=async()=>{
-    const Guardar=Axios.post('asientos/addAsientos',asientos)
+    const Guardar=Axios.post('asientos/guardarAsientos',asientos)
     .then(()=>{
       console.log("Asiento reservado exitosamente");
     })
@@ -66,6 +67,22 @@ const cambioEstado = (e) => {
                           onChange={cambioEstado}
                           placeholder="nombre de usuario"
                         />
+                      </div>
+
+                      <div class="mb-3">
+                        <label for="exampleFormControlInput1" class="form-label">
+                          Confirmar terminal
+                        </label>
+                        <input
+                          type="text"
+                          class="form-control"
+                          id="exampleFormControlInput1"
+                          name="terminal"
+                          value={asientos.terminal}
+                          onChange={cambioEstado}
+                          placeholder="Confirme la terminal donde se realiza el registro"
+                        />
+
                       </div>
 
                       <div class="mb-3">
@@ -114,10 +131,6 @@ const cambioEstado = (e) => {
 
 
                       </div>
-
-                      <button type="submit" className="btn btn-danger">
-                        Cancelar
-                      </button>
 
                       <button type="submit" className="btn btn-primary">
                         Reservar

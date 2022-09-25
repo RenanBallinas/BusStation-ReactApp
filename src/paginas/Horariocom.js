@@ -32,8 +32,7 @@ function Horariocom() {
                 <div class="card-body">
                   <h5 class="card-title">{horarioc.nombre}</h5>
                   <p class="card-text">
-                  <button className="btn btn-primary" onClick={()=>navigate()}>RESERVACION</button>
-                  <button className="btn btn-danger" onClick={()=>navigate(`/cancelacion/${horarioc._id}`)}>CANCELACIONES</button>
+                  <button className="btn btn-primary" onClick={()=>navigate(`/asientos`)}>RESERVACION</button>
                   </p>
                   
                 </div>
